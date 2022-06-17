@@ -12,6 +12,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 public class Controller implements Initializable {
 
@@ -45,7 +46,8 @@ public class Controller implements Initializable {
 
     @FXML
     void calc(ActionEvent event) {
-        boolean plus25 = getAnciennete();
+        resultat.setVisible(false);
+        boolean plus25 = get25ansBox();
         boolean pluspermis = getPermis(event);
         boolean ancienneteCal = getAnciennete();
         int nbAccidentCal = getNbAccident();
@@ -56,22 +58,32 @@ public class Controller implements Initializable {
 
             case 1:
                 resultat.setText("Vous bénéficiez du tarif Rouge.");
+                resultat.setTextFill(Color.web("#CF0013"));
+                resultat.setVisible(true);
                 break;
 
             case 2:
                 resultat.setText("Vous bénéficiez du tarif Orange.");
+                resultat.setTextFill(Color.web("#D98306"));
+                resultat.setVisible(true);
                 break;
 
             case 3:
                 resultat.setText("Vous bénéficiez du tarif Vert.");
+                resultat.setTextFill(Color.web("#3ABB06"));
+                resultat.setVisible(true);
                 break;
 
             case 4:
                 resultat.setText("Vous bénéficiez du tarif Bleu.");
+                resultat.setTextFill(Color.web("#062EB8"));
+                resultat.setVisible(true);
                 break;
 
             default:
                 resultat.setText("Désolé nous ne pouvons pas vous assurer.");
+                resultat.setTextFill(Color.web("#000001"));
+                resultat.setVisible(true);
                 break;
 
         }
@@ -87,19 +99,29 @@ public class Controller implements Initializable {
 
     public boolean getPermis(ActionEvent e) {
         String sonPermis = choiceBox.getValue();
-        return (sonPermis.equals("2 ans et plus"));
+        if (sonPermis.equals("2 ans et plus")) {
+            return true;
+        }
+        return false;
 
     }
 
     public boolean get25ansBox() {
-        return (ans.isSelected());
+        if (ans.isSelected()) {
+            return true;
+        }
+        return false;
 
     }
 
     public boolean getAnciennete() {
-        if (ancienOui.isSelected())
+        if (ancienOui.isSelected()) {
             return true;
-        return (ancienNon.isSelected());
+        }
+        if (ancienNon.isSelected()) {
+            return false;
+        }
+        return false;
 
     }
 
