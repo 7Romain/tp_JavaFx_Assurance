@@ -1,7 +1,7 @@
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.ImageIcon;
+import com.gluonhq.charm.glisten.control.ToggleButtonGroup;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,6 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
@@ -20,8 +19,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import com.gluonhq.charm.glisten.control.Icon;
-import com.gluonhq.charm.glisten.control.ToggleButtonGroup;
 
 public class Controller implements Initializable {
 
@@ -104,10 +101,12 @@ public class Controller implements Initializable {
             if (permisAnc.equals("2 ans et plus")) {
                 lblAnc.setVisible(true);
                 rBtnBAnc.setVisible(true);
+                System.out.println("+2");
             }
             if (permisAnc.equals("moins de 2 ans")) {
                 lblAnc.setVisible(false);
                 rBtnBAnc.setVisible(false);
+                System.out.println("-2");
             }
         }
 
@@ -204,6 +203,7 @@ public class Controller implements Initializable {
 
         // choiceBox.getSelectionModel().selectedItemProperty().addListener(e ->
         // menuAnciennete());
+        choiceBox.setOnAction(e -> menuAnciennete());
 
     }
 

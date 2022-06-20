@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="anciennetePan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#mouseclic" onMouseReleased="#mouseclic" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane fx:id="anciennetePan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Label alignment="CENTER" contentDisplay="TOP" layoutX="7.0" layoutY="7.0" prefHeight="28.0" prefWidth="587.0" text="Devis rapide Assurance Auto " textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="63.0" prefHeight="28.0" prefWidth="118.0" text="Plus de 25 ans ?" />
+      <Label layoutX="14.0" layoutY="63.0" prefHeight="28.0" prefWidth="118.0" text="a Plus de 25 ans ?" />
       <Label layoutX="14.0" layoutY="99.0" prefHeight="28.0" prefWidth="165.0" text="Possede le permis depuis :" />
       <Label fx:id="lblAnc" layoutX="14.0" layoutY="136.0" prefHeight="28.0" prefWidth="186.0" text="Ancienneté supérieur à 5 ans ?" />
       <Label fx:id="lblnbacc" layoutX="16.0" layoutY="224.0" prefHeight="28.0" prefWidth="214.0" text="Nombre d'accident responsable ?" />
@@ -44,7 +44,7 @@
             <RadioButton fx:id="ancienNon" mnemonicParsing="false" prefHeight="19.0" prefWidth="66.0" selected="true" text="Non" toggleGroup="$accident" />
          </children>
       </HBox>
-      <ChoiceBox fx:id="choiceBox" layoutX="233.0" layoutY="100.0" onContextMenuRequested="#mouseclic" onDragDetected="#mouseclic" onDragDone="#mouseclic" onDragExited="#mouseclic" onDragOver="#mouseclic" onKeyPressed="#mouseclic" onMouseClicked="#mouseclic" onMouseDragReleased="#mouseclic" onMouseExited="#mouseclic" onMouseReleased="#mouseclic" />
+      <ChoiceBox fx:id="choiceBox" layoutX="233.0" layoutY="100.0" />
       <Label fx:id="lblres" layoutX="14.0" layoutY="184.0" prefHeight="19.0" prefWidth="204.0" text="Déjà été responsable d'accident ?" />
       <ToggleButtonGroup fx:id="tgbrs" layoutX="236.0" layoutY="173.0">
          <toggles>
